@@ -11,7 +11,7 @@ export function HomeScreen() {
   return (
     <LinearGradient
       testID="home-screen"
-      colors={[Colors.LIGHT_GRAY, Colors.DARK_GRAY]}
+      colors={[Colors.LIGHT_GRAY, Colors.DARKER_GRAY]}
       style={styles.container}>
       <View style={styles.title}>
         <Text style={styles.date}>{now.format('MMM DD, YYYY')}</Text>
