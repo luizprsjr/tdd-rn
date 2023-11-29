@@ -16,7 +16,7 @@ export function Button({label, onPress, loading, style, ...rest}: Props) {
       <LinearGradient
         {...rest}
         colors={[Colors.LIGHTER_GRAY, Colors.DARK_GRAY]}
-        style={(styles.container, style)}>
+        style={[styles.container, style]}>
         {loading ? (
           <ActivityIndicator
             testID="button-loading"
