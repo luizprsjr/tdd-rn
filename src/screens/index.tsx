@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from './HomeScreen';
 import {WeatherScreen} from './WeatherScreen';
 
@@ -13,7 +13,7 @@ export type RootStackParamList = {
   };
 };
 
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createStackNavigator<RootStackParamList>();
 
 export function AppNavigator() {
   return (
