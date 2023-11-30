@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from './HomeScreen';
-import {WeatherScreen} from './WeatherScreen';
+import WeatherScreen from './WeatherScreen';
 
 export type RootStackParamList = {
   Home: undefined;

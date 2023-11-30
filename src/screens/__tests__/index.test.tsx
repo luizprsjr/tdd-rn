@@ -5,14 +5,12 @@ import {HomeScreen} from '../HomeScreen';
 import {View} from 'react-native';
 import {render, screen, waitFor} from '@testing-library/react-native';
 import {useNavigation} from '@react-navigation/native';
-import {WeatherScreen} from '../WeatherScreen';
+import WeatherScreen from '../WeatherScreen';
 
 jest.mock('../HomeScreen', () => ({
   HomeScreen: jest.fn(),
 }));
-jest.mock('../WeatherScreen', () => ({
-  WeatherScreen: jest.fn(),
-}));
+jest.mock('../WeatherScreen', () => jest.fn());
 
 describe('AppNavigator', () => {
   it('should render HomeScreen by default', async () => {

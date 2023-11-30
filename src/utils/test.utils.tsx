@@ -1,6 +1,10 @@
 import React from 'react';
-import {legacy_createStore as createStore} from 'redux';
-import rootReducer from '../store/reducers';
+import {
+  Middleware,
+  applyMiddleware,
+  legacy_createStore as createStore,
+} from 'redux';
+import rootReducer, {StateType} from '../store/reducers';
 import {ReactElement} from 'react';
 import {Provider} from 'react-redux';
 import {RenderOptions, render} from '@testing-library/react-native';
@@ -12,6 +16,15 @@ type Action = {
 };
 
 const store = createStore(rootReducer);
+
+export function mockStore(interceptor?: jest.Mock) {
+  const logger: Middleware<{}, StateType> = () => next => action => {
+    interceptor?.(action);
+    return next(action);
+  };
+
+  return createStore(rootReducer, undefined, applyMiddleware(logger));
+}
 
 type CustomRenderOptions = {
   store?: typeof store;

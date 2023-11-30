@@ -14,7 +14,7 @@ export class WeatherService {
           params: {
             lat,
             lon,
-            appid: 'PLACE_YOUR_API_KEY_HERE',
+            appid: 'a8e293649ecf2b37b96d8cf20e3da968',
             units: 'metric',
           },
         },
